@@ -12,6 +12,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# PHP config
+COPY ./conf/timezone.ini $PHP_INI_DIR/conf.d/timezone.ini
+
 # Set up web root
 RUN rm -rf /var/www/html \
     && ln -s /usr/src/lima/public /var/www/html
