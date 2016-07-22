@@ -3,7 +3,9 @@ FROM php:5.6-apache
 # Install everything
 RUN apt-get update \
     && apt-get install wget -qy \
-    && docker-php-ext-install mysql pdo pdo_mysql iconv mbstring sockets \
+    && apt-get install libicu-dev -qy \
+    && apt-get install sqlite3 libsqlite3-dev -qy \
+    && docker-php-ext-install mysql pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
     && pear channel-discover pear.phing.info \
     && pear install phing/phing \
     && a2enmod rewrite \
