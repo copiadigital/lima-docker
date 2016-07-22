@@ -17,7 +17,7 @@ For Lima projects run through the command line interface (CLI), you can do the f
 ### Create a `Dockerfile` in your Lima project
 
 ```dockerfile
-FROM lima:5.6-apache
+FROM copia/lima:5.6-apache
 COPY . /usr/src/lima
 ```
 
@@ -32,14 +32,14 @@ $ docker run -it --name my-running-app my-lima-app
 
 To use your native IDE, and see the changes instantly on the docker version, mount your Lima directory as a volume on run. From the root project folder, you would run:
 
-$ docker run -it --name my-running-app -v "$PWD":/usr/src/lima lima:5.6-apache
+$ docker run -it --name my-running-app -v "$PWD":/usr/src/lima copia/lima:5.6-apache
 
 ### Run a single PHP script
 
 For many tasks, like updating packages or running phing, it is easier to use the image. In such cases, you can run a command by using the Docker image directly:
 
 ```console
-$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/lima lima:5.6-apache composer install
+$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/lima copia/lima:5.6-apache composer install
 ```
 
 ## With Docker Compose
