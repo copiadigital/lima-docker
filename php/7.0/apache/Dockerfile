@@ -5,7 +5,8 @@ RUN apt-get update \
     && apt-get install wget -qy \
     && apt-get install libicu-dev -qy \
     && apt-get install sqlite3 libsqlite3-dev -qy \
-    && docker-php-ext-install pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
+    && apt-get install libpng-dev libjpeg-dev libgif-dev -qy \
+    && docker-php-ext-install gd pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
     # Install phing
     && pear channel-discover pear.phing.info \
     && pear install phing/phing \
