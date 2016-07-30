@@ -5,8 +5,13 @@ RUN apt-get update \
     && apt-get install wget -qy \
     && apt-get install libicu-dev -qy \
     && apt-get install sqlite3 libsqlite3-dev -qy \
-    && apt-get install libpng-dev libjpeg-dev libgif-dev -qy \
-    && docker-php-ext-install gd pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
+    && apt-get install libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libxpm-dev libvpx-dev -qy \
+    && docker-php-ext-configure gd \
+                --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
+                --with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
+                --with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
+                --with-vpx-dir=/usr/lib/x86_64-linux-gnu/ \
+    && docker-php-ext-install gd mysql pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
     # Install phing
     && pear channel-discover pear.phing.info \
     && pear install phing/phing \
