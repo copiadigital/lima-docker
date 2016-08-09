@@ -4,6 +4,7 @@ FROM php:7.0-apache
 RUN apt-get update \
     && apt-get install wget -qy \
     && apt-get install libicu-dev -qy \
+    && apt-get install mysql-client -qy \
     && apt-get install sqlite3 libsqlite3-dev -qy \
     && apt-get install libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libxpm-dev -qy \
     && docker-php-ext-configure gd \
