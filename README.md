@@ -2,6 +2,7 @@
 
 -	[`7.0-apache`, (*php/7.0/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/7.0/apache/Dockerfile)
 -	[`5.6-apache`, (*php/5.6/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/5.6/apache/Dockerfile)
+-	[`5.4-apache`, (*php/5.4/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/5.4/apache/Dockerfile)
 
 
 # What is Lima?
