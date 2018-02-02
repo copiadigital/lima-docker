@@ -22,7 +22,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # PHP config
-COPY ./conf/timezone.ini $PHP_INI_DIR/conf.d/timezone.ini
+COPY ./conf/*.ini $PHP_INI_DIR/conf.d/
 
 # Set up web root
 RUN rm -rf /var/www/html \
