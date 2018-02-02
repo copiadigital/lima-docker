@@ -11,7 +11,7 @@ RUN apt-get update \
                 --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
                 --with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
                 --with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
-    && docker-php-ext-install gd pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
+    && docker-php-ext-install gd exif pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
     # Install phing
     && pear channel-discover pear.phing.info \
     && pear install phing/phing \
