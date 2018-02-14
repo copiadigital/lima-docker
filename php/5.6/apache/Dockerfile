@@ -12,7 +12,7 @@ RUN apt-get update \
 		--with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
 		--with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
 		--with-vpx-dir=/usr/lib/x86_64-linux-gnu/ \
-    && docker-php-ext-install gd exif mysql pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets \
+    && docker-php-ext-install gd exif mysql pdo pdo_mysql pdo_sqlite iconv mbstring intl sockets zip \
     && pear channel-discover pear.phing.info \
     && pear install phing/phing \
     && a2enmod rewrite \
