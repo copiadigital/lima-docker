@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install libicu-dev -qy \
     && apt-get install mysql-client -qy \
     && apt-get install sqlite3 libsqlite3-dev -qy \
-    && apt-get install libfreetype6-dev libjpeg62-turbo-dev libpng-dev libxpm-dev -qy \
+    && apt-get install libfreetype6-dev libzip-dev libjpeg62-turbo-dev libpng-dev libxpm-dev -qy \
     && apt-get install ghostscript -qy \
     && docker-php-ext-configure gd \
                 --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
