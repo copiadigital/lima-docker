@@ -1,5 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
+-       [`7.3-apache`, (*php/7.3/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/7.3/apache/Dockerfile)
 -       [`7.2-apache`, (*php/7.2/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/7.2/apache/Dockerfile)
 -       [`7.1-apache`, (*php/7.1/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/7.1/apache/Dockerfile)
 -	[`7.0-apache`, (*php/7.0/apache/Dockerfile*)](https://github.com/CopiaDigital/lima-docker/blob/master/php/7.0/apache/Dockerfile)
