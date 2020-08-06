@@ -8,6 +8,7 @@ RUN apt-get update \
     && apt-get install sqlite3 libsqlite3-dev -qy \
     && apt-get install libfreetype6-dev libjpeg62-turbo-dev libpng-dev libxpm-dev libvpx-dev -qy \
     && apt-get install ghostscript -qy \
+    && apt-get install -y locales \
     && docker-php-ext-configure gd \
                 --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
 		--with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
@@ -21,6 +22,13 @@ RUN apt-get update \
     && apt-get install -y subversion \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN /bin/sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
+    && /bin/sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen \
+    && /bin/sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen \
+    && /bin/sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
+
+RUN /usr/sbin/locale-gen
 
 # PHP config
 COPY conf/*.ini /usr/local/etc/php/conf.d/
