@@ -1,2 +1,0 @@
-docker build -t copia/wordpress:7.3-apache .
-docker push copia/wordpress:7.3-apache
